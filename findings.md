@@ -103,3 +103,4 @@ Visible modules:
 - Avoid concurrent filesystem-heavy operations on `F:`.
 - A USB write interruption corrupted `findings.md` once. Git history and the on-disk memory files must be checked periodically.
 - USB corruption later reached local Git objects and scaffold files. Active implementation now runs from the clean NTFS clone at `C:\Users\yyz\.cache\mudskipper-x-dev-fresh`; sync back to `F:` only after final verification.
+- Final sync confirmed the USB filesystem itself needs repair: read-only `chkdsk F:` reports directory and volume-bitmap corruption with no bad sectors. Do not write to `F:` before an explicitly approved `chkdsk F: /F` repair.

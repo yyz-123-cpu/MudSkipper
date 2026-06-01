@@ -62,3 +62,6 @@
 - Compared the rendered dashboard against `图片/UI展示图.png` at `1536 x 1024`, removed duplicate map visuals from the already-annotated reference crop, and added a selected-marker interaction ring.
 - Added a low-height desktop layout so `1280 x 800` fits in a single viewport, and verified the simplified desktop-only notice at `900 x 800`.
 - Added a local SVG favicon and confirmed browser verification reports zero error overlays, page errors, console errors, and failed resource responses.
+- Pushed the verified frontend commits to `origin/main` at `65bbf29`.
+- Final sync back to `F:` was halted after Windows reported `ERROR 1006` and `ERROR 1392` during serial copying. Read-only `chkdsk F:` reports an exFAT volume with `Warning / Full Repair Needed`, corruption in both `F:\MudSkipper-X-node_modules-partial-delete` and `F:\MudSkipper-X`, and volume-bitmap errors. No bad sectors were reported.
+- Do not write to `F:` again until the user approves and completes `chkdsk F: /F`. The verified NTFS clone and GitHub remote remain intact.

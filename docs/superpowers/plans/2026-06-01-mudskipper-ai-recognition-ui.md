@@ -153,12 +153,12 @@
 - Modify: `task_plan.md`
 - Keep: `docs/verification/` only when screenshots help document the result
 
-- [ ] Run `npm run test -- --run`.
-- [ ] Run `npm run build`.
-- [ ] Review edited TSX files against React best practices.
+- [x] Run `npm run test -- --run`.
+- [x] Run `npm run build`.
+- [x] Review edited TSX files against React best practices.
 - [ ] Remove temporary artifacts and verify ignored local caches are absent.
-- [ ] Run `git status --short` and inspect the final diff.
-- [ ] Commit verification records and push `main`.
+- [x] Run `git status --short` and inspect the final diff.
+- [x] Commit verification records and push `main`.
 
 ## Plan Self-Review
 
