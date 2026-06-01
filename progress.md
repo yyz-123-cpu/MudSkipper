@@ -1,0 +1,33 @@
+# MudSkipper-X Progress Log
+
+## 2026-06-01
+- Read the final PDF, supporting text, and key product images.
+- Extracted the AI recognition dashboard modules from the UI reference image.
+- Confirmed with the user that ESP32 is the correct controller.
+- Narrowed the baseline upload path to ESP32-supported Wi-Fi.
+- Explained IP65 and IP68 differences; enclosure target remains pending.
+- Loaded the brainstorming, file-planning, UI/UX, TDD, and React review workflows.
+- Scanned the workspace: it contains design assets only and is not currently a Git repository.
+- Created durable task memory files in the workspace root.
+- User selected frontend scope B: complete AI anomaly recognition page plus navigable shell and placeholder destinations.
+- User selected local mock data behind an API adapter layer for the frontend milestone.
+- Added `.gitignore` for dependencies, build output, local environment files, temporary files, editor files, and `.superpowers/`.
+- Initialized an empty local Git repository on branch target `main`.
+- Git remote setup was interrupted by Git's `dubious ownership` check because the `F:` filesystem does not record ownership. The exact workspace path will be added to `safe.directory`.
+- Added `F:/MudSkipper-X` to Git `safe.directory`.
+- Linked local `main` to `origin` at `https://github.com/yyz-123-cpu/MudSkipper.git`.
+- Verified the remote is reachable and currently has no branches. No baseline commit has been pushed yet.
+- Started a local visual-companion session and presented three dashboard style directions for user selection.
+- The in-app browser could not reach the visual-companion localhost URL. Follow-up health checks timed out, so visual direction selection will continue in chat and later review will use the real frontend dev server.
+- User explicitly selected `图片/UI展示图.png` as the direct visual reference. The frontend should closely reproduce this screen while remaining componentized and interactive.
+- User selected the full anomaly interaction option: synchronized event selection, risk filtering, and manual processing annotations with status and notes.
+- Removed the inaccessible visual-companion temporary directory under `.superpowers/`. No temporary preview artifacts remain.
+- User selected a local static satellite base image with an SVG route and marker overlay for the map module.
+- User selected desktop-first responsive scope: high-fidelity `1536 x 1024` reproduction, laptop-width adaptation, and a simplified small-screen notice.
+- User selected `localStorage` persistence for manual annotation status and notes, isolated behind a replaceable storage adapter.
+- User approved React + TypeScript + Vite + ECharts + custom CSS variables, with `lucide-react` icons.
+- User approved the seven-destination navigable shell and the reference-aligned anomaly-detection page architecture.
+- User approved the mock API and local annotation adapter boundaries plus synchronized anomaly interactions, filtering, report preview, and error states.
+- User approved the testing and verification approach.
+- Wrote the validated frontend design specification to `docs/superpowers/specs/2026-06-01-mudskipper-ai-recognition-ui-design.md`.
+- Completed specification self-review: no placeholder markers were found, and confirmed scope, data boundaries, interaction rules, responsive behavior, and verification requirements are covered.
