@@ -51,3 +51,7 @@
 - Completed the adapter TDD cycle: verified the missing-module failure, then implemented domain models, mock inspection data, `MockInspectionApi`, and `LocalAnnotationStorage`. Service tests pass.
 - Completed the shell TDD cycle: verified the missing `App` failure, then implemented seven-item navigation, device header, placeholder destinations, base visual tokens, and the narrow-screen notice. Shell tests pass.
 - Completed the dashboard-state TDD cycle: verified the missing-page failure, then implemented loading/error states, highest-risk default selection, synchronized list/detail selection, risk filtering, and explicit empty results. Dashboard tests pass.
+- Completed the map-and-chart TDD cycle: verified missing visual modules, then added the local satellite map, SVG route overlay, interactive anomaly markers, map legend, scale, and four-series ECharts water-quality trend module.
+- Fixed production-build typing discovered during verification: use Lucide's exported icon type, include Vitest globals for application test files, and split `vite.config.ts` from `vitest.config.ts` to avoid Vite 6 versus Vitest 2 nested-Vite type conflicts.
+- Mock ECharts only in jsdom tests because jsdom does not provide a Canvas implementation. The browser build retains the real chart renderer.
+- Verified the frontend after Task 5 with `npm run test -- --run` (`9/9` tests) and `npm run build`.

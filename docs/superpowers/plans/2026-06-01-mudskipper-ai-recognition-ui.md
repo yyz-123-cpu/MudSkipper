@@ -107,11 +107,11 @@
 - Modify: `src/styles/dashboard.css`
 - Create: `src/test/map-and-chart.test.tsx`
 
-- [ ] Write failing tests that expect the selected map marker and the chart container.
-- [ ] Run `npm run test -- --run src/test/map-and-chart.test.tsx` and verify failure because the visual modules do not exist.
-- [ ] Implement the local satellite crop, SVG route overlay, markers, legend, map scale, and ECharts trend module.
-- [ ] Run the visual-module tests and verify they pass.
-- [ ] Commit map and chart modules.
+- [x] Write failing tests that expect the selected map marker and the chart container.
+- [x] Run `npm run test -- --run src/test/map-and-chart.test.tsx` and verify failure because the visual modules do not exist.
+- [x] Implement the local satellite crop, SVG route overlay, markers, legend, map scale, and ECharts trend module.
+- [x] Run the visual-module tests and verify they pass.
+- [x] Commit map and chart modules.
 
 ### Task 6: Add Manual Annotation And Report Preview
 

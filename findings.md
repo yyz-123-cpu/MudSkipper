@@ -102,4 +102,4 @@ Visible modules:
 - Keep Git metadata in `C:\Users\yyz\.cache\mudskipper-x-git\.git` while the worktree remains on `F:\MudSkipper-X`.
 - Avoid concurrent filesystem-heavy operations on `F:`.
 - A USB write interruption corrupted `findings.md` once. Git history and the on-disk memory files must be checked periodically.
-
+- USB corruption later reached local Git objects and scaffold files. Active implementation now runs from the clean NTFS clone at `C:\Users\yyz\.cache\mudskipper-x-dev-fresh`; sync back to `F:` only after final verification.

@@ -336,3 +336,173 @@
     width: 74px;
   }
 }
+
+.inspection-map {
+  background: #082532;
+  height: 100%;
+  min-height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.inspection-map__image {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.inspection-map__route {
+  height: 100%;
+  inset: 0;
+  overflow: visible;
+  position: absolute;
+  width: 100%;
+}
+
+.inspection-map__route polyline {
+  fill: none;
+  stroke: #3de7fa;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.72;
+  vector-effect: non-scaling-stroke;
+}
+
+.inspection-map__normal-point,
+.inspection-map__current,
+.inspection-map__anomaly {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.inspection-map__normal-point {
+  align-items: center;
+  background: #087dc0;
+  border: 1px solid #d8f5ff;
+  border-radius: 50%;
+  color: #effbff;
+  display: flex;
+  font-size: 9px;
+  height: 18px;
+  justify-content: center;
+  pointer-events: none;
+  width: 18px;
+}
+
+.inspection-map__anomaly {
+  align-items: center;
+  background: rgba(182, 29, 25, 0.9);
+  border: 1px solid #ffb1a7;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  height: 31px;
+  justify-content: center;
+  transition: box-shadow 160ms ease, transform 160ms ease;
+  width: 31px;
+}
+
+.inspection-map__anomaly::before {
+  background: rgba(205, 44, 30, 0.25);
+  border-radius: 50%;
+  content: '';
+  height: 78px;
+  position: absolute;
+  width: 78px;
+  z-index: -1;
+}
+
+.inspection-map__anomaly:hover,
+.inspection-map__anomaly.is-selected {
+  box-shadow: 0 0 0 3px rgba(255, 114, 93, 0.5), 0 0 22px rgba(255, 72, 48, 0.92);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.inspection-map__current {
+  align-items: center;
+  background: rgba(100, 183, 107, 0.9);
+  border: 1px solid #d9ffd8;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  height: 24px;
+  justify-content: center;
+  width: 24px;
+}
+
+.inspection-map__legend {
+  background: rgba(0, 19, 33, 0.82);
+  border-radius: 4px;
+  bottom: 11px;
+  color: #deedf8;
+  display: grid;
+  font-size: 11px;
+  gap: 7px;
+  left: 11px;
+  padding: 10px;
+  position: absolute;
+}
+
+.inspection-map__legend span {
+  align-items: center;
+  display: flex;
+  gap: 7px;
+}
+
+.inspection-map__legend-line {
+  background: #3de7fa;
+  display: inline-block;
+  height: 2px;
+  position: relative;
+  width: 19px;
+}
+
+.inspection-map__legend-line::after {
+  background: #3de7fa;
+  border-radius: 50%;
+  content: '';
+  height: 5px;
+  position: absolute;
+  right: 5px;
+  top: -1px;
+  width: 5px;
+}
+
+.inspection-map__legend-icon.is-normal {
+  color: #39a8ee;
+}
+
+.inspection-map__legend-icon.is-anomaly {
+  color: #ff6155;
+}
+
+.inspection-map__legend-icon.is-current {
+  color: #85d683;
+}
+
+.inspection-map__scale {
+  bottom: 17px;
+  color: #ecf9ff;
+  font-size: 11px;
+  position: absolute;
+  right: 14px;
+  text-align: center;
+}
+
+.inspection-map__scale i {
+  border-bottom: 1px solid #d8e8ed;
+  border-left: 1px solid #d8e8ed;
+  border-right: 1px solid #d8e8ed;
+  display: block;
+  height: 6px;
+  margin-top: 2px;
+  width: 72px;
+}
+
+.water-quality-chart {
+  height: 100%;
+  min-height: 220px;
+}

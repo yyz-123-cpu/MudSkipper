@@ -1,6 +1,8 @@
 import { AnomalyAnalysis } from '../components/dashboard/AnomalyAnalysis';
 import { AnomalyEventList } from '../components/dashboard/AnomalyEventList';
+import { InspectionMap } from '../components/dashboard/InspectionMap';
 import { Panel } from '../components/dashboard/Panel';
+import { WaterQualityChart } from '../components/dashboard/WaterQualityChart';
 import { useInspectionDashboard } from '../hooks/useInspectionDashboard';
 import type { AnnotationStorage } from '../services/annotationStorage';
 import type { InspectionApi } from '../services/inspectionApi';
@@ -28,14 +30,28 @@ export function AnomalyDetectionPage({ api, storage }: AnomalyDetectionPageProps
     );
   }
 
+  if (!dashboard.data) {
+    return null;
+  }
+
   return (
     <div className="dashboard-grid">
       <div className="dashboard-left">
         <Panel className="map-panel" title="巡检地图与轨迹">
-          <div className="module-slot">地图模块待接入</div>
+          <InspectionMap
+            anomalies={dashboard.data.anomalies}
+            currentPosition={dashboard.data.currentPosition}
+            normalPoints={dashboard.data.normalPoints}
+            onSelect={dashboard.setSelectedId}
+            route={dashboard.data.route}
+            selectedId={dashboard.selectedId}
+          />
         </Panel>
         <Panel className="chart-panel" title="水质参数趋势图">
-          <div className="module-slot">趋势图模块待接入</div>
+          <WaterQualityChart
+            highlightedTime={dashboard.selectedAnomaly?.highlightedTime}
+            samples={dashboard.data.waterQualitySeries}
+          />
         </Panel>
       </div>
 

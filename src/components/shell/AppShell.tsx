@@ -1,4 +1,4 @@
-import { useEffect, useState, type ComponentType, type PropsWithChildren } from 'react';
+import { useEffect, useState, type PropsWithChildren } from 'react';
 import {
   BatteryMedium,
   ClipboardList,
@@ -9,6 +9,7 @@ import {
   Settings,
   TriangleAlert,
   Wifi,
+  type LucideIcon,
 } from 'lucide-react';
 
 export type DestinationId =
@@ -24,7 +25,7 @@ interface NavigationItem {
   id: DestinationId;
   label: string;
   pageTitle: string;
-  icon: ComponentType<{ size?: number; strokeWidth?: number }>;
+  icon: LucideIcon;
 }
 
 export const navigationItems: NavigationItem[] = [
