@@ -31,3 +31,5 @@
 - User approved the testing and verification approach.
 - Wrote the validated frontend design specification to `docs/superpowers/specs/2026-06-01-mudskipper-ai-recognition-ui-design.md`.
 - Completed specification self-review: no placeholder markers were found, and confirmed scope, data boundaries, interaction rules, responsive behavior, and verification requirements are covered.
+- Committed the initial project baseline as `f328c0c` (`docs: establish MudSkipper-X frontend design baseline`).
+- Pushed local `main` to `origin/main` at `https://github.com/yyz-123-cpu/MudSkipper.git`.
