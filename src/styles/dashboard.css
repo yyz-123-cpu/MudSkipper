@@ -359,6 +359,7 @@
   overflow: visible;
   position: absolute;
   width: 100%;
+  opacity: 0;
 }
 
 .inspection-map__route polyline {
@@ -389,30 +390,29 @@
   justify-content: center;
   pointer-events: none;
   width: 18px;
+  display: none;
 }
 
 .inspection-map__anomaly {
   align-items: center;
-  background: rgba(182, 29, 25, 0.9);
-  border: 1px solid #ffb1a7;
+  background: transparent;
+  border: 0;
   border-radius: 50%;
   color: #fff;
   cursor: pointer;
   display: flex;
-  height: 31px;
+  height: 58px;
   justify-content: center;
   transition: box-shadow 160ms ease, transform 160ms ease;
-  width: 31px;
+  width: 58px;
 }
 
 .inspection-map__anomaly::before {
-  background: rgba(205, 44, 30, 0.25);
-  border-radius: 50%;
-  content: '';
-  height: 78px;
-  position: absolute;
-  width: 78px;
-  z-index: -1;
+  display: none;
+}
+
+.inspection-map__anomaly svg {
+  opacity: 0;
 }
 
 .inspection-map__anomaly:hover,
@@ -431,6 +431,7 @@
   height: 24px;
   justify-content: center;
   width: 24px;
+  display: none;
 }
 
 .inspection-map__legend {
@@ -438,7 +439,7 @@
   border-radius: 4px;
   bottom: 11px;
   color: #deedf8;
-  display: grid;
+  display: none;
   font-size: 11px;
   gap: 7px;
   left: 11px;
@@ -490,6 +491,7 @@
   position: absolute;
   right: 14px;
   text-align: center;
+  display: none;
 }
 
 .inspection-map__scale i {
@@ -858,4 +860,129 @@
 
 .report-preview__focus p {
   margin: 0 0 5px;
+}
+
+@media (max-height: 850px) and (min-width: 960px) {
+  .content-area {
+    padding: calc(var(--topbar-height) + 8px) 15px 2px;
+  }
+
+  .dashboard-grid {
+    min-height: calc(100vh - var(--topbar-height) - 16px);
+  }
+
+  .dashboard-left,
+  .dashboard-right {
+    gap: 8px;
+  }
+
+  .dashboard-left {
+    grid-template-rows: minmax(330px, 1.3fr) minmax(210px, 0.85fr);
+  }
+
+  .dashboard-right {
+    grid-template-rows: 286px minmax(291px, 1fr) 96px;
+  }
+
+  .panel__header {
+    height: 34px;
+    padding: 0 12px;
+  }
+
+  .panel__header h2 {
+    font-size: 15px;
+  }
+
+  .panel__body {
+    height: calc(100% - 34px);
+  }
+
+  .risk-filters {
+    padding: 5px 12px;
+  }
+
+  .event-list {
+    gap: 2px;
+    padding: 0 8px 6px;
+  }
+
+  .event-card {
+    min-height: 51px;
+    grid-template-columns: 74px minmax(0, 1fr) 66px;
+    gap: 8px;
+    padding: 4px;
+  }
+
+  .event-card img {
+    height: 40px;
+    width: 74px;
+  }
+
+  .event-card__title b {
+    font-size: 14px;
+  }
+
+  .analysis-overview,
+  .analysis-copy {
+    overflow: auto;
+    padding: 8px 12px;
+  }
+
+  .analysis-title {
+    margin-bottom: 5px;
+  }
+
+  .analysis-overview dl {
+    gap: 3px;
+  }
+
+  .site-gallery {
+    gap: 4px;
+    margin-top: 6px;
+  }
+
+  .site-gallery > img {
+    height: 58px;
+  }
+
+  .site-gallery div {
+    gap: 4px;
+  }
+
+  .site-gallery div img {
+    height: 24px;
+  }
+
+  .annotate-button {
+    margin-top: 5px;
+  }
+
+  .water-parameters {
+    margin-bottom: 6px;
+  }
+
+  .water-parameters div {
+    padding: 2px 5px;
+  }
+
+  .analysis-copy p,
+  .analysis-copy li {
+    line-height: 1.45;
+  }
+
+  .inspection-stats h2,
+  .report-card h2 {
+    height: 27px;
+    padding: 4px 12px;
+  }
+
+  .inspection-stats__grid {
+    padding: 5px 10px;
+    row-gap: 4px;
+  }
+
+  .report-card > div {
+    gap: 8px;
+    padding: 8px 12px;
+  }
 }

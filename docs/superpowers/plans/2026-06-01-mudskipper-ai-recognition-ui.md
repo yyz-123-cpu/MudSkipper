@@ -139,12 +139,12 @@
 - Modify: `src/components/dashboard/*`
 - Create: `docs/verification/`
 
-- [ ] Run the app with `npm run dev -- --host 0.0.0.0`.
-- [ ] Capture and inspect the dashboard at `1536 x 1024`.
-- [ ] Compare it against `图片/UI展示图.png` and adjust proportions, borders, spacing, typography, selected states, and panel density.
-- [ ] Capture and inspect a common laptop viewport.
-- [ ] Capture and inspect a narrow viewport and confirm the simplified notice replaces the dense console.
-- [ ] Commit visual polish.
+- [x] Run the app with `npm run dev -- --host 0.0.0.0`.
+- [x] Capture and inspect the dashboard at `1536 x 1024`.
+- [x] Compare it against `图片/UI展示图.png` and adjust proportions, borders, spacing, typography, selected states, and panel density.
+- [x] Capture and inspect a common laptop viewport.
+- [x] Capture and inspect a narrow viewport and confirm the simplified notice replaces the dense console.
+- [x] Commit visual polish.
 
 ### Task 8: Verify, Clean, And Publish
 

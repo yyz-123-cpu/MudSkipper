@@ -58,3 +58,7 @@
 - Completed the operator-workflow TDD cycle: verified the missing annotation and report controls, then implemented annotation editing, immediate status display, `localStorage` persistence, on-site imagery, water-quality values, summary metrics, report preview, browser print action, and explicit close actions.
 - Resolved duplicate accessible names for report close controls by naming the icon action `关闭报告预览` and retaining the footer action as `关闭`.
 - Verified the frontend after Task 6 with `npm run test -- --run` (`11/11` tests) and `npm run build`.
+- Completed real-browser verification with a temporary Playwright script using the bundled Node runtime and the installed local Chrome browser.
+- Compared the rendered dashboard against `图片/UI展示图.png` at `1536 x 1024`, removed duplicate map visuals from the already-annotated reference crop, and added a selected-marker interaction ring.
+- Added a low-height desktop layout so `1280 x 800` fits in a single viewport, and verified the simplified desktop-only notice at `900 x 800`.
+- Added a local SVG favicon and confirmed browser verification reports zero error overlays, page errors, console errors, and failed resource responses.
