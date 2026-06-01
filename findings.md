@@ -3,7 +3,7 @@
 ## Source Materials
 - `MudSkipper_X_设计方案.pdf`: final 11-page design proposal and primary source of truth.
 - `PDF文稿.txt`: earlier text draft. Useful for context but not authoritative where it differs from the final PDF.
-- `图片/UI展示图.png`: visual reference for the requested AI recognition interface.
+- `图片/UI展示图.png`: direct visual reference for the requested AI recognition interface.
 - `图片/系统架构与技术路线图.png`: four-layer system diagram.
 
 ## Product Understanding
@@ -13,15 +13,16 @@ The software chain is:
 
 `sensor acquisition -> calibration and fusion -> environment recognition -> adaptive motion switching -> anomaly detection and geolocation -> Wi-Fi upload -> platform visualization -> inspection report`
 
-## Confirmed Hardware and Communication Direction
+## Confirmed Hardware And Communication Direction
 - Use ESP32 as the bottom-layer controller.
 - Base upload route: ESP32 Wi-Fi.
 - Bluetooth is a reasonable local configuration or debugging channel if the frontend/backend design later requires it.
 - 4G and LoRa are extension options only; both need additional hardware modules.
 
 ## Frontend Reference UI
-The user explicitly selected `图片/UI展示图.png` as the direct visual target. The implementation should be a close desktop reproduction, not merely a loose style interpretation. The UI reference image presents a dark-theme operations dashboard titled `AI异常识别与分析报告`. Its visible modules are:
+The user explicitly selected `图片/UI展示图.png` as the direct visual target. The implementation should be a close desktop reproduction, not merely a loose style interpretation.
 
+Visible modules:
 - Left navigation: inspection overview, real-time monitoring, track playback, anomaly detection, water-quality monitoring, data reports, system settings.
 - Route map: inspection path, normal locations, anomaly locations, current location.
 - Water-quality trend chart: pH, turbidity, temperature, dissolved oxygen.
@@ -35,13 +36,6 @@ The user explicitly selected `图片/UI展示图.png` as the direct visual targe
 - Reproduce the reference composition: narrow left navigation, top title bar, map and chart column, anomaly list and analysis column, and bottom statistics/report row.
 - Preserve the dark navy background, cyan line work, thin bordered panels, compact typography, red/orange anomaly severity accents, and operational-screen density.
 - Build real interactive frontend components behind the visual treatment; do not implement the page as one static image.
-
-## Requirement Gaps To Resolve
-- First frontend milestone scope is resolved: implement a navigable system shell, a complete AI anomaly dashboard, and placeholder pages for the other sidebar destinations.
-- IP rating: IP65 versus an immersion-capable target such as IP68 or a dual test specification.
-- Sensor set: final inclusion of conductivity and dissolved oxygen.
-- Runtime data strategy is resolved for the frontend milestone: local mock data behind a typed API adapter layer. Polling and WebSocket transport decisions remain part of later backend research.
-- User roles, permissions, report format, and offline behavior.
 
 ## Confirmed AI Anomaly Interaction Scope
 - Selecting an anomaly updates the detail panel, water-quality values, site images, and AI analysis conclusion.
@@ -90,7 +84,22 @@ The user explicitly selected `图片/UI展示图.png` as the direct visual targe
 - Visual verification compares the rendered dashboard against `图片/UI展示图.png` at `1536 x 1024`, checks common laptop widths, and confirms the narrow-screen notice.
 - Engineering verification runs the test suite and production build, followed by browser interaction review and temporary-file cleanup.
 
+## Requirement Gaps For Later Backend Research
+- IP rating: IP65 versus an immersion-capable target such as IP68 or a dual test specification.
+- Final sensor set: conductivity and dissolved oxygen inclusion.
+- HTTP, polling, and WebSocket transport choice.
+- User roles, permissions, report format, and offline behavior.
+
 ## Version Differences Found
 - Final PDF text uses `ESP32 + Raspberry Pi`; an earlier draft and one visual mention STM32.
 - Final PDF text mentions IP65; an exploded-view image mentions IP68.
 - Final PDF text lists conductivity; the UI image shows dissolved oxygen.
+
+## Local Development Environment Constraint
+- The workspace is located on an exFAT USB drive (`F:`).
+- Large dependency trees and concurrent writes are extremely slow on this volume.
+- Keep source files and committed assets in the workspace, but run dependencies and temporary tooling from `C:\Users\yyz\.cache\mudskipper-x-runtime`.
+- Keep Git metadata in `C:\Users\yyz\.cache\mudskipper-x-git\.git` while the worktree remains on `F:\MudSkipper-X`.
+- Avoid concurrent filesystem-heavy operations on `F:`.
+- A USB write interruption corrupted `findings.md` once. Git history and the on-disk memory files must be checked periodically.
+

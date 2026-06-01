@@ -33,3 +33,19 @@
 - Completed specification self-review: no placeholder markers were found, and confirmed scope, data boundaries, interaction rules, responsive behavior, and verification requirements are covered.
 - Committed the initial project baseline as `f328c0c` (`docs: establish MudSkipper-X frontend design baseline`).
 - Pushed local `main` to `origin/main` at `https://github.com/yyz-123-cpu/MudSkipper.git`.
+- User approved the specification and asked to begin implementation.
+- Wrote the frontend implementation plan to `docs/superpowers/plans/2026-06-01-mudskipper-ai-recognition-ui.md`.
+- Created Vite, TypeScript, Vitest, and local image-crop scaffold files.
+- Initial `npm install` exceeded the two-minute command timeout. The npm registry responds normally; follow-up will use lightweight checks and a longer bounded timeout.
+- Verified the partial dependency tree is unusable: React exists, but Sharp and Vitest are incomplete. The exFAT workspace drive performs poorly for large dependency trees, so the next attempt will use an NTFS-backed dependency directory if links are supported.
+- The exFAT drive rejected Junction creation and directory symbolic links require elevation. Added a cache-aware project tool runner and installed the dependency runtime under `C:\Users\yyz\.cache\mudskipper-x-runtime`.
+- Generated `package-lock.json`. Future filesystem-heavy operations on `F:` will run serially.
+- User confirmed that `F:` is a USB drive. Keep committed source in the workspace while using the NTFS runtime cache for dependencies and avoiding concurrent USB writes.
+- Added an NTFS runtime-project mirror for Vite and Vitest execution. Source remains on `F:`, while verification runs from `C:\Users\yyz\.cache\mudskipper-x-runtime\project`.
+- Generated local dashboard assets and verified the empty Vitest harness exits successfully.
+- Moved the unusable partial dependency tree out of the repository to `F:\MudSkipper-X-node_modules-partial-delete` after it caused Git scans to stall. Cleanup of that external temporary directory remains pending until USB-heavy work is finished.
+- Moved Git metadata to `C:\Users\yyz\.cache\mudskipper-x-git\.git` and left the working tree on the USB drive. Verified branch and remote state remain intact.
+- Detected a binary-corrupted `findings.md` after interrupted USB writes. Rebuilt the durable findings file from Git history and current context.
+- Cloned a clean NTFS development worktree from GitHub after USB corruption reached Git objects and scaffold files.
+- Rebuilt the standard Vite scaffold in the NTFS development worktree, generated six local image assets, and installed dependencies normally.
+- Completed the adapter TDD cycle: verified the missing-module failure, then implemented domain models, mock inspection data, `MockInspectionApi`, and `LocalAnnotationStorage`. Service tests pass.

@@ -4,14 +4,14 @@
 Build a polished frontend for the MudSkipper-X AI anomaly recognition and analysis interface in the current workspace. Keep durable project memory on disk so the later backend research can continue from the same decisions.
 
 ## Current Phase
-Phase 1: Frontend requirements and visual design - awaiting user spec review
+Phase 2: Frontend implementation plan - complete; Phase 3 frontend scaffold - in progress
 
 ## Phases
 | Phase | Status | Deliverable |
 |---|---|---|
-| 1. Frontend requirements and visual design | Awaiting review | Approved UI scope and design specification |
-| 2. Frontend implementation plan | Pending | File-by-file implementation plan with verification steps |
-| 3. Frontend scaffold and core dashboard | Pending | Runnable frontend with AI recognition dashboard |
+| 1. Frontend requirements and visual design | Complete | Approved UI scope and design specification |
+| 2. Frontend implementation plan | Complete | File-by-file implementation plan with verification steps |
+| 3. Frontend scaffold and core dashboard | In progress | Runnable frontend with AI recognition dashboard |
 | 4. Frontend interaction and responsive polish | Pending | Working filters, anomaly selection, report preview, responsive states |
 | 5. Frontend verification and cleanup | Pending | Tests, visual verification, temporary-file cleanup |
 | 6. Backend research | Pending | Backend architecture proposal based on the finished frontend contract |
@@ -52,3 +52,10 @@ Phase 1: Frontend requirements and visual design - awaiting user spec review
 | Workspace is not a Git repository | Initial context scan | Keep planning files locally. Do not assume commit history is available. |
 | Git reported `dubious ownership` for `F:/MudSkipper-X` | Repository initialization | Add this exact workspace path to Git `safe.directory`, then continue remote setup. |
 | Local visual-companion URL could not be reached from the in-app browser; follow-up health checks timed out | Visual brainstorming | Stop relying on the companion server. Use `图片/UI展示图.png` as the direct reference and use the actual frontend dev server for later visual review. |
+| `npm install` exceeded the initial two-minute command timeout; two broad PowerShell health checks also stalled | Frontend scaffold | Confirmed the npm registry responds. Use lightweight filesystem checks and a longer bounded install timeout instead of repeating broad process enumeration. |
+| Partial `node_modules` remained on the exFAT workspace drive; recursive deletion exceeded ten minutes and the directory lacked complete Sharp/Vitest packages | Frontend scaffold | Isolate the partial directory and test an NTFS-backed dependency directory link before continuing installation. |
+| exFAT workspace rejected a `node_modules` Junction with `Incorrect function` | Frontend scaffold | Try a directory symbolic link. If unsupported, run dependencies from an NTFS tool directory and map package resolution explicitly. |
+| Directory symbolic link required administrator privilege; parallel lockfile generation caused asset/test commands to exceed their timeouts on exFAT | Frontend scaffold | Use the NTFS cache runner, keep project operations serial on `F:`, and avoid concurrent writes. |
+| Git staging stalled while a partial dependency tree remained under the USB workspace and multiple Git scans overlapped | Frontend scaffold | Stop the stalled scans, move the partial dependency tree to `F:\MudSkipper-X-node_modules-partial-delete`, clear the stale index lock, and keep Git operations serial. |
+| Desktop Git scans continued to contend for `.git/index.lock` on the USB drive | Frontend scaffold | Move Git metadata to `C:\Users\yyz\.cache\mudskipper-x-git\.git`, keep `F:\MudSkipper-X` as the worktree, and verify branch/remote integrity before continuing. |
+| `findings.md` was corrupted by an interrupted USB write | Frontend scaffold | Remove the binary-corrupted file, reconstruct it from Git history and current context, and periodically verify memory-file encoding. |

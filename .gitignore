@@ -27,3 +27,6 @@ Thumbs.db
 .idea/
 .vscode/
 
+# Generated local verification output
+docs/verification/
+
