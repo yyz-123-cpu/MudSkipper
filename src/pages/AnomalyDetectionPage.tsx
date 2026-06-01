@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import { AnomalyAnalysis } from '../components/dashboard/AnomalyAnalysis';
 import { AnomalyEventList } from '../components/dashboard/AnomalyEventList';
+import { AnnotationEditor } from '../components/dashboard/AnnotationEditor';
 import { InspectionMap } from '../components/dashboard/InspectionMap';
+import { InspectionStats } from '../components/dashboard/InspectionStats';
 import { Panel } from '../components/dashboard/Panel';
+import { ReportPreviewModal } from '../components/dashboard/ReportPreviewModal';
 import { WaterQualityChart } from '../components/dashboard/WaterQualityChart';
 import { useInspectionDashboard } from '../hooks/useInspectionDashboard';
 import type { AnnotationStorage } from '../services/annotationStorage';
@@ -14,6 +18,9 @@ interface AnomalyDetectionPageProps {
 
 export function AnomalyDetectionPage({ api, storage }: AnomalyDetectionPageProps) {
   const dashboard = useInspectionDashboard(api, storage);
+  const [annotationEditorOpen, setAnnotationEditorOpen] = useState(false);
+  const [reportPreviewOpen, setReportPreviewOpen] = useState(false);
+  const [savedAnnotationId, setSavedAnnotationId] = useState<string | null>(null);
 
   if (dashboard.isLoading) {
     return <div className="dashboard-state">正在加载巡检数据...</div>;
@@ -69,11 +76,34 @@ export function AnomalyDetectionPage({ api, storage }: AnomalyDetectionPageProps
         <Panel className="analysis-panel" title="异常详情与分析">
           <AnomalyAnalysis
             annotation={dashboard.selectedId ? dashboard.annotations[dashboard.selectedId] : undefined}
+            annotationSaved={savedAnnotationId === dashboard.selectedId}
             event={dashboard.selectedAnomaly}
+            onAnnotate={() => setAnnotationEditorOpen(true)}
           />
         </Panel>
-        <div className="summary-slot">巡检统计与报告生成模块待接入</div>
+        <InspectionStats onOpenReport={() => setReportPreviewOpen(true)} summary={dashboard.data.summary} />
       </div>
+
+      {annotationEditorOpen && dashboard.selectedAnomaly && (
+        <AnnotationEditor
+          annotation={dashboard.annotations[dashboard.selectedAnomaly.id]}
+          anomalyId={dashboard.selectedAnomaly.id}
+          onClose={() => setAnnotationEditorOpen(false)}
+          onSave={(status, notes) => {
+            dashboard.saveAnnotation(dashboard.selectedAnomaly!.id, status, notes);
+            setSavedAnnotationId(dashboard.selectedAnomaly!.id);
+            setAnnotationEditorOpen(false);
+          }}
+        />
+      )}
+
+      {reportPreviewOpen && (
+        <ReportPreviewModal
+          event={dashboard.selectedAnomaly}
+          onClose={() => setReportPreviewOpen(false)}
+          summary={dashboard.data.summary}
+        />
+      )}
     </div>
   );
 }

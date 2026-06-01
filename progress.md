@@ -55,3 +55,6 @@
 - Fixed production-build typing discovered during verification: use Lucide's exported icon type, include Vitest globals for application test files, and split `vite.config.ts` from `vitest.config.ts` to avoid Vite 6 versus Vitest 2 nested-Vite type conflicts.
 - Mock ECharts only in jsdom tests because jsdom does not provide a Canvas implementation. The browser build retains the real chart renderer.
 - Verified the frontend after Task 5 with `npm run test -- --run` (`9/9` tests) and `npm run build`.
+- Completed the operator-workflow TDD cycle: verified the missing annotation and report controls, then implemented annotation editing, immediate status display, `localStorage` persistence, on-site imagery, water-quality values, summary metrics, report preview, browser print action, and explicit close actions.
+- Resolved duplicate accessible names for report close controls by naming the icon action `关闭报告预览` and retaining the footer action as `关闭`.
+- Verified the frontend after Task 6 with `npm run test -- --run` (`11/11` tests) and `npm run build`.

@@ -123,11 +123,11 @@
 - Modify: `src/pages/AnomalyDetectionPage.tsx`
 - Create: `src/test/annotation-and-report.test.tsx`
 
-- [ ] Write failing tests that save an annotation, reload from storage, open the report preview, and close it.
-- [ ] Run `npm run test -- --run src/test/annotation-and-report.test.tsx` and verify failure because annotation and report controls do not exist.
-- [ ] Implement annotation editing, immediate status display, `localStorage` persistence, statistics, report identifier, preview dialog, print action, and close action.
-- [ ] Run the annotation and report tests and verify they pass.
-- [ ] Commit the operator workflow.
+- [x] Write failing tests that save an annotation, reload from storage, open the report preview, and close it.
+- [x] Run `npm run test -- --run src/test/annotation-and-report.test.tsx` and verify failure because annotation and report controls do not exist.
+- [x] Implement annotation editing, immediate status display, `localStorage` persistence, statistics, report identifier, preview dialog, print action, and close action.
+- [x] Run the annotation and report tests and verify they pass.
+- [x] Commit the operator workflow.
 
 ### Task 7: Complete Visual Styling And Responsive Behavior
 

@@ -506,3 +506,356 @@
   height: 100%;
   min-height: 220px;
 }
+
+.site-gallery {
+  display: grid;
+  gap: 6px;
+  margin-top: 9px;
+}
+
+.site-gallery > img {
+  height: 85px;
+  width: 100%;
+}
+
+.site-gallery img {
+  border: 1px solid rgba(126, 205, 229, 0.38);
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+.site-gallery div {
+  display: grid;
+  gap: 5px;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+}
+
+.site-gallery div img {
+  height: 32px;
+  min-width: 0;
+  width: 100%;
+}
+
+.annotate-button {
+  margin-top: 8px;
+}
+
+.analysis-copy {
+  overflow: auto;
+}
+
+.water-parameters {
+  border: 1px solid rgba(46, 143, 186, 0.36);
+  margin: 0 0 10px;
+}
+
+.water-parameters div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(46, 143, 186, 0.2);
+  padding: 4px 6px;
+}
+
+.water-parameters div:last-child {
+  border-bottom: 0;
+}
+
+.water-parameters dt,
+.water-parameters dd {
+  color: var(--text-soft);
+  font-size: 11px;
+}
+
+.water-parameters dd {
+  margin: 0;
+}
+
+.water-parameters div:nth-child(2) dd,
+.water-parameters div:nth-child(4) dd {
+  color: #ff765b;
+}
+
+.annotation-success {
+  color: var(--success);
+  font-size: 12px;
+  margin: 6px 0 0;
+}
+
+.inspection-summary {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  min-height: 0;
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--line-soft);
+}
+
+.inspection-stats,
+.report-card {
+  background: linear-gradient(145deg, rgba(5, 34, 58, 0.98), rgba(2, 20, 37, 0.98));
+}
+
+.inspection-stats h2,
+.report-card h2 {
+  height: 31px;
+  margin: 0;
+  border-bottom: 1px solid var(--line-soft);
+  color: var(--text);
+  padding: 6px 14px;
+  font-size: 14px;
+}
+
+.inspection-stats__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 7px 12px;
+  row-gap: 6px;
+}
+
+.inspection-stats__grid span {
+  display: grid;
+  grid-template-columns: 22px 1fr auto;
+  align-items: center;
+  gap: 4px;
+}
+
+.inspection-stats__grid svg {
+  color: var(--cyan);
+}
+
+.inspection-stats__grid b {
+  color: var(--text-soft);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.inspection-stats__grid em {
+  color: var(--cyan-muted);
+  font-size: 11px;
+  font-style: normal;
+}
+
+.report-card > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+}
+
+.report-card svg {
+  flex: 0 0 auto;
+  color: var(--cyan);
+}
+
+.report-card p {
+  display: grid;
+  gap: 3px;
+  margin: 0 auto 0 0;
+}
+
+.report-card strong {
+  color: var(--text-soft);
+  font-size: 11px;
+}
+
+.report-card small {
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.primary-button,
+.secondary-button,
+.icon-button {
+  align-items: center;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.primary-button {
+  gap: 5px;
+  border: 1px solid rgba(59, 193, 241, 0.82);
+  background: rgba(11, 91, 135, 0.72);
+  color: #effbff;
+  padding: 7px 12px;
+  font-size: 12px;
+}
+
+.secondary-button {
+  gap: 5px;
+  border: 1px solid rgba(84, 165, 196, 0.48);
+  background: rgba(7, 42, 67, 0.84);
+  color: var(--text-soft);
+  padding: 6px 11px;
+  font-size: 12px;
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.icon-button:hover {
+  border-color: var(--cyan);
+  color: #fff;
+}
+
+.modal-backdrop {
+  align-items: center;
+  background: rgba(0, 7, 15, 0.76);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 20px;
+  position: fixed;
+  z-index: 80;
+}
+
+.operator-modal {
+  width: min(500px, 100%);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: linear-gradient(145deg, rgba(6, 37, 62, 0.99), rgba(2, 19, 35, 0.99));
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45), inset 0 0 24px rgba(0, 130, 190, 0.08);
+}
+
+.operator-modal header,
+.operator-modal footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 16px;
+}
+
+.operator-modal header {
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.operator-modal footer {
+  justify-content: flex-end;
+  gap: 8px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.operator-modal header span,
+.report-preview__heading span {
+  color: var(--cyan-muted);
+  font-size: 11px;
+}
+
+.operator-modal h2 {
+  margin: 4px 0 0;
+  color: var(--text);
+  font-size: 18px;
+}
+
+.icon-button {
+  border: 1px solid rgba(84, 165, 196, 0.36);
+  background: rgba(7, 42, 67, 0.66);
+  color: var(--text-soft);
+  font-size: 20px;
+  height: 30px;
+  width: 30px;
+}
+
+.annotation-form {
+  display: grid;
+  gap: 13px;
+  padding: 16px;
+}
+
+.annotation-form label {
+  display: grid;
+  gap: 6px;
+}
+
+.annotation-form label span {
+  color: var(--text-soft);
+  font-size: 12px;
+}
+
+.annotation-form select,
+.annotation-form textarea {
+  border: 1px solid rgba(84, 165, 196, 0.48);
+  border-radius: 3px;
+  background: rgba(1, 18, 33, 0.92);
+  color: var(--text);
+  padding: 8px;
+}
+
+.annotation-form textarea {
+  resize: vertical;
+}
+
+.report-preview {
+  width: min(680px, 100%);
+}
+
+.report-preview__body {
+  padding: 18px;
+}
+
+.report-preview__heading,
+.report-preview__metrics {
+  display: flex;
+  justify-content: space-between;
+}
+
+.report-preview__heading div {
+  display: grid;
+  gap: 4px;
+}
+
+.report-preview__heading strong {
+  color: var(--text);
+  font-size: 20px;
+}
+
+.report-preview__heading time {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.report-preview__metrics {
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.report-preview__metrics span {
+  flex: 1;
+  border: 1px solid rgba(84, 165, 196, 0.34);
+  color: var(--text-muted);
+  padding: 9px;
+  font-size: 11px;
+}
+
+.report-preview__metrics b {
+  display: block;
+  color: var(--cyan-muted);
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+.report-preview__focus {
+  border-left: 2px solid var(--danger);
+  background: rgba(7, 38, 61, 0.76);
+  padding: 11px 13px;
+}
+
+.report-preview__focus h3 {
+  margin: 0 0 6px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.report-preview__focus p,
+.report-preview__focus small {
+  color: var(--text-soft);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.report-preview__focus p {
+  margin: 0 0 5px;
+}
