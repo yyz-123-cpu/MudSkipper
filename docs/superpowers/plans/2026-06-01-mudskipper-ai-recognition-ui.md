@@ -75,11 +75,11 @@
 - Create: `src/styles/shell.css`
 - Create: `src/test/app-shell.test.tsx`
 
-- [ ] Write a failing test that renders the shell on `异常检测`, clicks `实时监控`, and expects the deferred-module message.
-- [ ] Run `npm run test -- --run src/test/app-shell.test.tsx` and verify failure because the shell does not exist.
-- [ ] Implement the seven-item navigation, header clock, Wi-Fi state, battery state, placeholder page, and narrow-screen notice.
-- [ ] Run the shell test and verify it passes.
-- [ ] Commit the shell.
+- [x] Write a failing test that renders the shell on `异常检测`, clicks `实时监控`, and expects the deferred-module message.
+- [x] Run `npm run test -- --run src/test/app-shell.test.tsx` and verify failure because the shell does not exist.
+- [x] Implement the seven-item navigation, header clock, Wi-Fi state, battery state, placeholder page, and narrow-screen notice.
+- [x] Run the shell test and verify it passes.
+- [x] Commit the shell.
 
 ### Task 4: Implement Dashboard State And Event Interactions
 

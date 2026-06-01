@@ -1,0 +1,24 @@
+:root {
+  color-scheme: dark;
+  font-family:
+    Inter, "Microsoft YaHei", "PingFang SC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --bg-deep: #020b16;
+  --bg-panel: rgba(4, 27, 49, 0.94);
+  --bg-panel-strong: rgba(3, 19, 35, 0.98);
+  --bg-elevated: rgba(8, 40, 67, 0.92);
+  --line: rgba(38, 168, 232, 0.72);
+  --line-soft: rgba(52, 166, 219, 0.28);
+  --cyan: #31d7ff;
+  --cyan-muted: #6dc7e7;
+  --text: #edf9ff;
+  --text-soft: #b8d5e4;
+  --text-muted: #7f9bac;
+  --danger: #ff4b42;
+  --warning: #e89b32;
+  --low-risk: #eac33e;
+  --success: #6ec58b;
+  --radius: 7px;
+  --sidebar-width: 174px;
+  --topbar-height: 74px;
+}
