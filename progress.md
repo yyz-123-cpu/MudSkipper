@@ -50,3 +50,4 @@
 - Rebuilt the standard Vite scaffold in the NTFS development worktree, generated six local image assets, and installed dependencies normally.
 - Completed the adapter TDD cycle: verified the missing-module failure, then implemented domain models, mock inspection data, `MockInspectionApi`, and `LocalAnnotationStorage`. Service tests pass.
 - Completed the shell TDD cycle: verified the missing `App` failure, then implemented seven-item navigation, device header, placeholder destinations, base visual tokens, and the narrow-screen notice. Shell tests pass.
+- Completed the dashboard-state TDD cycle: verified the missing-page failure, then implemented loading/error states, highest-risk default selection, synchronized list/detail selection, risk filtering, and explicit empty results. Dashboard tests pass.

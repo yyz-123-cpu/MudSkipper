@@ -92,11 +92,11 @@
 - Create: `src/styles/dashboard.css`
 - Create: `src/test/anomaly-dashboard.test.tsx`
 
-- [ ] Write failing tests for highest-risk default selection, event selection, risk filtering, and empty filter state.
-- [ ] Run `npm run test -- --run src/test/anomaly-dashboard.test.tsx` and verify failure because the page does not exist.
-- [ ] Implement dashboard orchestration, filter controls, event list, selected-event detail, loading state, and retryable error state.
-- [ ] Run the dashboard tests and verify they pass.
-- [ ] Commit dashboard state and list behavior.
+- [x] Write failing tests for highest-risk default selection, event selection, risk filtering, and empty filter state.
+- [x] Run `npm run test -- --run src/test/anomaly-dashboard.test.tsx` and verify failure because the page does not exist.
+- [x] Implement dashboard orchestration, filter controls, event list, selected-event detail, loading state, and retryable error state.
+- [x] Run the dashboard tests and verify they pass.
+- [x] Commit dashboard state and list behavior.
 
 ### Task 5: Add The Local Map And Water-Quality Chart
 
